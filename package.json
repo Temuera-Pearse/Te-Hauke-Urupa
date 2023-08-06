@@ -1,0 +1,51 @@
+{
+  "name": "stash-keeper",
+  "version": "1.0.0",
+  "main": "server/index.ts",
+  "license": "MIT",
+  "keywords": [
+    "fullstack"
+  ],
+  "scripts": {
+    "start": "node dist/server/index.js",
+    "test": "vitest",
+    "dev": "run-p dev:client dev:server dev:css",
+    "dev:client": "vite",
+    "dev:server": "nodemon --watch server/",
+    "dev:css": "tailwindcss -i ./client/styles/index.css -o ./public/output.css --watch",
+    "build": "run-s build:client build:server",
+    "build:client": "vite build",
+    "build:server": "tsc -p server/tsconfig.json",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
+    "knex": "knex --knexfile ./server/db/knexfile.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "concurrently": "^8.2.0",
+    "cors": "^2.8.5",
+    "d3": "^7.8.5",
+    "eslint": "^8.46.0",
+    "express": "^4.18.2",
+    "husky": "^8.0.3",
+    "jest": "^29.6.2",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.1",
+    "lint-staged": "^13.2.3",
+    "moment": "^2.29.4",
+    "mongoose": "^7.4.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
+    "passport": "^0.6.0",
+    "pg-promise": "^11.5.3",
+    "prettier": "^3.0.0",
+    "qrcode": "^1.5.3",
+    "react": "^18.2.0",
+    "react-query": "^3.39.3",
+    "react-redux": "^8.1.2",
+    "sequelize": "^6.32.1",
+    "supertest": "^6.3.3",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.8",
+    "vitest": "^0.34.1"
+  }
+}
