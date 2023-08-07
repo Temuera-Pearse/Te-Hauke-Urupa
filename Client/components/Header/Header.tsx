@@ -1,7 +1,7 @@
 function Header() {
   return (
-    <div>
-      <h1>im the header</h1>
+    <div className="flex justify-center w-full bg-red-800	">
+      <h1 className="flex items-center">im the header</h1>
     </div>
   )
 }
