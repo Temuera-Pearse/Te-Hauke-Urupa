@@ -8,9 +8,27 @@ import {
 } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './components/App/App'
+import Home from './pages/LandingPage'
 
 export const routes = createRoutesFromElements(
   <Route>
-    <Route path="/" element={<App />}></Route>
+    <Route path="/" element={<App />}>
+      <Route index element={<Home />} />
+    </Route>
   </Route>
 )
+
+function AppProvider() {
+  return <RouterProvider router={createBrowserRouter(routes)} />
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const queryClient = new QueryClient()
+  createRoot(document.getElementById('app') as HTMLElement).render(
+    <QueryClientProvider client={queryClient}>
+      <Suspense>
+        <AppProvider />
+      </Suspense>
+    </QueryClientProvider>
+  )
+})
