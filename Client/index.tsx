@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import App from './components/App/App'
-import Home from './pages/LandingPage'
+import Home from './pages/LandingPage/LandingPage'
 import MainPage from './pages/MainPage/MainPage'
 
 export const routes = createRoutesFromElements(
