@@ -2,7 +2,7 @@ import * as z from 'zod'
 
 export const profileSchema = z.object({
   //Details
-  profilePicture: z.string(),
+  profile_picture: z.string(),
   family_name: z.string(),
   given_name: z.string(),
   address: z.string(),
