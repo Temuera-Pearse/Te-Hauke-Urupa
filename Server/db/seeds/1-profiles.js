@@ -2,7 +2,7 @@ exports.seed = async function (knex) {
   //!!!!!!!!!!!!!!!!!!!1currently these are fake users!!!!!!!!!!!!!!!!!!!!!
   await knex('profiles').insert([
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people1.jpeg',
       family_name: 'Doe',
       given_name: 'John Doe',
       address: '-',
@@ -24,7 +24,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people2.jpeg',
       family_name: 'Smith',
       given_name: 'John',
       address: '123 Main St, Cityville',
@@ -46,7 +46,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people3.jpeg',
       family_name: 'Johnson',
       given_name: 'Emily',
       address: '456 Elm St, Townsville',
@@ -68,7 +68,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people4.jpeg',
       family_name: 'Williams',
       given_name: 'Sarah',
       address: '789 Oak Ave, Villagetown',
@@ -90,7 +90,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people5.jpeg',
       family_name: 'Martinez',
       given_name: 'Carlos',
       address: '567 Maple Rd, Hamletville',
@@ -112,7 +112,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people6.jpeg',
       family_name: 'Anderson',
       given_name: 'Olivia',
       address: '789 Pine Lane, Meadowville',
@@ -134,7 +134,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people7.jpeg',
       family_name: 'Walker',
       given_name: 'Michael',
       address: '456 Birch Street, Riverside',
@@ -156,7 +156,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people8.jpg',
       family_name: 'White',
       given_name: 'Sophia',
       address: '234 Cedar Court, Woodland',
@@ -178,7 +178,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people9.jpg',
       family_name: 'Brown',
       given_name: 'Ethan',
       address: '345 Oakwood Avenue, Havenhill',
@@ -200,7 +200,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people10.jpeg',
       family_name: 'Lee',
       given_name: 'Ava',
       address: '123 Willow Lane, Meadowville',
@@ -222,7 +222,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people11.jpeg',
       family_name: 'Garcia',
       given_name: 'Liam',
       address: '789 Cedar Avenue, Riverside',
@@ -244,7 +244,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people12.png',
       family_name: 'Harris',
       given_name: 'Mia',
       address: '234 Elm Street, Hamletville',
@@ -266,7 +266,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people13.webp',
       family_name: 'Clark',
       given_name: 'Noah',
       address: '567 Maple Avenue, Villagetown',
@@ -288,7 +288,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people14.jpeg',
       family_name: 'Lewis',
       given_name: 'Emma',
       address: '789 Oakwood Road, Woodland',
@@ -310,7 +310,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people15.jpeg',
       family_name: 'Robinson',
       given_name: 'William',
       address: '123 Pine Lane, Meadowville',
@@ -332,7 +332,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people16.avif',
       family_name: 'Perez',
       given_name: 'Isabella',
       address: '456 Birch Street, Riverside',
@@ -354,7 +354,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people17.jpeg',
       family_name: 'Baker',
       given_name: 'Ella',
       address: '234 Cedar Avenue, Riverside',
@@ -376,7 +376,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people18.jpeg',
       family_name: 'Turner',
       given_name: 'James',
       address: '567 Elm Street, Hamletville',
@@ -398,7 +398,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people19.jpeg',
       family_name: 'Cooper',
       given_name: 'Lily',
       address: '789 Maple Road, Villagetown',
@@ -420,7 +420,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: '',
+      profile_picture: 'public/images/test-photos/maori-people20.webp',
       family_name: 'King',
       given_name: 'Daniel',
       address: '123 Oakwood Avenue, Meadowville',
