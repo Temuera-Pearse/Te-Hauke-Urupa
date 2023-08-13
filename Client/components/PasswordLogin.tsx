@@ -9,7 +9,7 @@ function PasswordLogin() {
   }
 
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+    <div className="flex flex-col rad justify-center items-center bg-gray-100">
       <div className="text-center">
         <input
           type="password"
@@ -17,15 +17,15 @@ function PasswordLogin() {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="password"
-          className="w-48 p-2 mt-1 border rounded shadow-sm focus:ring focus:ring-opacity-50"
+          className="w-48 p-2 rounded shadow-sm focus:ring focus:ring-opacity-50"
           style={{ fontStyle: 'italic', color: 'grey' }}
         />
 
         <button
           onClick={handleSubmit}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
+          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
         >
-          Submit
+          login
         </button>
       </div>
     </div>
