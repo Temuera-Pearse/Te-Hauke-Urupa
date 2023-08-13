@@ -1,5 +1,5 @@
 import React from 'react'
-import PasswordLogin from '../../components/passwordLogin'
+import PasswordLogin from '../../components/PasswordLogin/PasswordLogin'
 
 function LandingPage() {
   const backgroundImage = 'public/images/background/kahuranaki-marae.webp'

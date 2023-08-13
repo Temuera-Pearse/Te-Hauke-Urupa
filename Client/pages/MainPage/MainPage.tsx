@@ -1,5 +1,6 @@
 import Header from '../../components/Header/Header'
 import PhotoLinks from '../../components/PhotoLinks/PhotoLinks'
+import SearchBar from '../../components/SearchBar/SearchBar'
 
 function MainPage() {
   return (
@@ -7,8 +8,8 @@ function MainPage() {
       <div>
         <Header />
       </div>
-      <div>
-        <h3>Im the mainpage</h3>
+      <div className="my-32">
+        <SearchBar />
       </div>
       <div>
         <PhotoLinks />
