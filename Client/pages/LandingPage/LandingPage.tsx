@@ -1,10 +1,18 @@
-import { useState } from 'react'
+import React from 'react'
 import PasswordLogin from '../../components/passwordLogin'
 
 function LandingPage() {
+  const backgroundImage = 'public/images/background/kahuranaki-marae.webp'
   return (
-    <div className="justify-center mt-8">
-      <PasswordLogin />
+    <div
+      className="min-h-screen bg-cover bg-center flex justify-center items-center"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
+      <div>
+        <PasswordLogin />
+      </div>
     </div>
   )
 }
