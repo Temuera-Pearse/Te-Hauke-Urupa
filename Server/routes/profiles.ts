@@ -13,4 +13,9 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.get('/MainPage', async (req, res) => {
+  const profilePics = await db.getProfilePics()
+  res.json(profilePics)
+})
+
 export default router
