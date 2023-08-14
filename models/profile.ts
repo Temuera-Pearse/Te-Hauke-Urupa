@@ -29,3 +29,5 @@ export const profileSchema = z.object({
 export const profileBackendSchema = profileSchema.extend({
   id: z.number(),
 })
+
+export type proBackSchema = z.infer<typeof profileBackendSchema>

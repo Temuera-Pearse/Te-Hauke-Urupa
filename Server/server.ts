@@ -7,6 +7,7 @@ const server = express()
 
 server.use(express.json())
 
+server.use('/api/v1/MainPage', profileRoutes)
 server.use('/api/v1/profiles', profileRoutes)
 server.use('/api/v1/*', (req, res) => res.sendStatus(404))
 
