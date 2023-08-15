@@ -1,3 +1,5 @@
+import Profile from '../../pages/Profile/Profile'
+
 interface PhotoProps {
   src: string
   profileLink: string

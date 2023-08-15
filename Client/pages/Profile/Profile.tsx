@@ -1,3 +1,9 @@
+import { proBackSchema } from '../../../models/profile'
+
+interface Props {
+  data: proBackSchema[]
+}
+
 function Profile() {
   return (
     <div>

@@ -12,3 +12,7 @@ export async function fetchedProfiles(): Promise<proBackSchema[]> {
   console.log('api', res.body)
   return res.body
 }
+
+// export async function fetchedPerson(): Promise<proBackSchema[]> {
+//   const url = `${rootUrl}`
+// }

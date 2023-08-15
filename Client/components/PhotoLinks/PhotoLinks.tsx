@@ -13,7 +13,7 @@ function PhotoLinks(props: Props) {
     data: profiles,
     isLoading,
     isError,
-  } = useQuery('profiles', fetchedProfiles) // Use the useQuery hook
+  } = useQuery('profiles', fetchedProfiles)
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -23,7 +23,6 @@ function PhotoLinks(props: Props) {
     return <p>Error fetching profiles.</p>
   }
 
-  // Ensure 'profiles' is an array before using .map
   if (!Array.isArray(profiles)) {
     return <p>No profiles available.</p>
   }

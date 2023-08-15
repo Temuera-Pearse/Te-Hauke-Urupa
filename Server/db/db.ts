@@ -11,3 +11,10 @@ export async function getProfilePics(db = connection) {
     'profiles.profile_picture'
   )) as proBackSchema[]
 }
+
+export async function getProfilesById(id: number, db = connection) {
+  return (await db('profiles')
+    .where('profiles.id', id)
+    .select()
+    .first()) as proBackSchema[]
+}
