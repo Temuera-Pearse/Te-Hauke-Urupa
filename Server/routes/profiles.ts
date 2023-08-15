@@ -14,8 +14,13 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/MainPage', async (req, res) => {
-  const profilePics = await db.getProfilePics()
-  res.json(profilePics)
+  try {
+    const profilePics = await db.getProfilePics()
+    res.json(profilePics)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
 })
 
 export default router

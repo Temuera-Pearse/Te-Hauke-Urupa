@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Photos from '../Photos/Photos'
-import { fetchedProfiles } from '../../api/profilesAPI'
-import { useQuery } from 'react-query'
+import { fetchedProfiles } from '../../api/profilesAPI' // You'll need to import your API function here
+import { useQuery } from 'react-query' // Assuming you are using react-query
 import { proBackSchema } from '../../../models/profile'
 
 interface Props {
@@ -9,25 +9,23 @@ interface Props {
 }
 
 function PhotoLinks(props: Props) {
-  const profiles = props.data
-  console.log(profiles)
-  const { isLoading, isError } = useQuery(
-    'profile_picture',
-    () => fetchedProfiles
-  )
+  const {
+    data: profiles,
+    isLoading,
+    isError,
+  } = useQuery('profiles', fetchedProfiles) // Use the useQuery hook
 
   if (isLoading) {
     return <p>Loading...</p>
   }
 
   if (isError) {
-    return <p>Error fetching photos.</p>
+    return <p>Error fetching profiles.</p>
   }
 
-  // Ensure 'photos' is an array before using .map
+  // Ensure 'profiles' is an array before using .map
   if (!Array.isArray(profiles)) {
-    console.log(profiles)
-    return <p>No photos available.</p>
+    return <p>No profiles available.</p>
   }
 
   return (

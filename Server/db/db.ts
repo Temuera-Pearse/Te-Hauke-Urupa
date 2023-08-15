@@ -3,7 +3,7 @@ import connection from './connection'
 import { proBackSchema } from '../../models/profile'
 
 export async function getProfiles(db = connection) {
-  return await db('profiles').select()
+  return (await db('profiles').select()) as proBackSchema[]
 }
 
 export async function getProfilePics(db = connection) {
