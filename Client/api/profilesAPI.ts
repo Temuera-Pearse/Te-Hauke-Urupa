@@ -6,13 +6,15 @@ const rootUrl = '/api/v1/profiles'
 
 export async function fetchedProfiles(): Promise<proBackSchema[]> {
   const url = `${rootUrl}`
-  console.log('im the api')
 
   const res = await request.get(url).set('Content-Type', 'application/json')
   console.log('api', res.body)
   return res.body
 }
 
-// export async function fetchedPerson(): Promise<proBackSchema[]> {
-//   const url = `${rootUrl}`
-// }
+export async function fetchedPerson(id: number): Promise<proBackSchema[]> {
+  const url = `${rootUrl}/${id}`
+  const res = await request.get(url).set('Content-Type', 'application/json')
+  console.log('profile', res.body)
+  return res.body.profile
+}

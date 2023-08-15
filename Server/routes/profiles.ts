@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/MainPage', async (req, res) => {
+router.get('/main', async (req, res) => {
   try {
     const profilePics = await db.getProfilePics()
     res.json(profilePics)
@@ -25,11 +25,12 @@ router.get('/MainPage', async (req, res) => {
   }
 })
 
-router.get('/MainPage/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
-    const profiles = await getProfilesById(id)
-    res.json(profiles)
+    const profile = await getProfilesById(id)
+    console.log(profile)
+    res.json(profile)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })
