@@ -2,6 +2,7 @@ import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import { fetchedPerson } from '../../api/profilesAPI'
 import { proBackSchema } from '../../../models/profile'
+import Photos from '../Photos/Photos'
 
 interface Props {
   id: number
@@ -20,24 +21,27 @@ function ProfileInfo(props: Props) {
   }
 
   if (isError) {
-    return <p>Error fetching profiles.</p>
+    return <p>Error fetching profile.</p>
   }
 
-  if (!profile || !Array.isArray(profile) || profile.length === 0) {
-    console.log(profile)
+  if (!profile) {
     return <p>No profile available.</p>
   }
 
-  const selectedProfile = profile[0]
-
   return (
     <div>
+      <div>
+        <Photos
+          key={profile.id}
+          src={profile.profile_picture}
+          profileLink={''}
+        />
+      </div>
       <h2>
-        {selectedProfile.given_name} {selectedProfile.family_name}
+        {profile.given_name} {profile.family_name}
       </h2>
-      <p>Age: {selectedProfile.age}</p>
-      <p>Gender: {selectedProfile.gender}</p>
-      {/* Render other profile information here */}
+      <p>Age: {profile.age}</p>
+      <p>Gender: {profile.gender}</p>
     </div>
   )
 }

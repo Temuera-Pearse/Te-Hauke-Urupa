@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import Photos from '../Photos/Photos'
 import { fetchedProfiles } from '../../api/profilesAPI'
 import { useQuery } from 'react-query'
