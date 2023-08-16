@@ -1,17 +1,28 @@
 import React, { useState } from 'react'
 
-function SearchBar() {
+function SearchBar({ profiles, setFilteredProfiles }) {
   const [inputValue, setInputValue] = useState('')
 
   const handleSubmit = () => {
-    alert(`You typed: ${inputValue}`)
+    const searchTerm = inputValue.trim().toLowerCase()
+
+    if (searchTerm === '') {
+      setFilteredProfiles(profiles)
+    } else {
+      const filteredProfiles = profiles.filter(
+        (profile) =>
+          profile.given_name.toLowerCase().includes(searchTerm) ||
+          profile.family_name.toLowerCase().includes(searchTerm)
+      )
+      setFilteredProfiles(filteredProfiles)
+    }
+
     setInputValue('')
   }
 
   return (
     <div className="flex flex-col rad justify-center items-center bg-gray-100">
       <div className="text-center w-96">
-        {' '}
         <input
           type="search"
           id="myTextbox"
@@ -21,6 +32,12 @@ function SearchBar() {
           className="p-2 rounded shadow-sm focus:ring focus:ring-opacity-50 w-full max-w-full"
           style={{ fontStyle: 'italic', color: 'grey' }}
         />
+        <button
+          onClick={handleSubmit}
+          className="bg-blue-500 text-white px-4 py-2 mt-2 rounded hover:bg-blue-600"
+        >
+          Search
+        </button>
       </div>
     </div>
   )

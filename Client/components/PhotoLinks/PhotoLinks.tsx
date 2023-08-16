@@ -32,7 +32,11 @@ function PhotoLinks(props: Props) {
     <div className="flex flex-wrap justify-center gap-4">
       {profiles.map((profileData) => (
         <Link key={profileData.id} to={`/main/${profileData.id}`}>
-          <Photos src={profileData.profile_picture} profileLink={''} />
+          <div className="w-48 h-48">
+            {' '}
+            {/* Adjust the width and height as needed */}
+            <Photos src={profileData.profile_picture} profileLink={''} />
+          </div>
         </Link>
       ))}
     </div>
