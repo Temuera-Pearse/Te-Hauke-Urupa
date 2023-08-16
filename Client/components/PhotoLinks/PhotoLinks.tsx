@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Photos from '../Photos/Photos'
-import { fetchedProfiles } from '../../api/profilesAPI' // You'll need to import your API function here
-import { useQuery } from 'react-query' // Assuming you are using react-query
+import { fetchedProfiles } from '../../api/profilesAPI'
+import { useQuery } from 'react-query'
 import { proBackSchema } from '../../../models/profile'
 
 interface Props {
