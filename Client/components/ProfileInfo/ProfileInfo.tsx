@@ -31,10 +31,9 @@ function ProfileInfo(props: Props) {
   return (
     <div>
       <div>
-        <Photos
-          key={profile.id}
-          src={profile.profile_picture}
-          profileLink={''}
+        <img
+          src={`${import.meta.env.BASE_URL}${profile.profile_picture}`}
+          alt="Profile Picture"
         />
       </div>
       <h2>

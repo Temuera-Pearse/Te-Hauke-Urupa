@@ -1,3 +1,5 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
 import Photos from '../Photos/Photos'
 import { fetchedProfiles } from '../../api/profilesAPI'
 import { useQuery } from 'react-query'
@@ -29,11 +31,9 @@ function PhotoLinks(props: Props) {
   return (
     <div className="flex flex-wrap justify-center gap-4">
       {profiles.map((profileData) => (
-        <Photos
-          key={profileData.id}
-          src={profileData.profile_picture}
-          profileLink={''}
-        />
+        <Link key={profileData.id} to={`/main/${profileData.id}`}>
+          <Photos src={profileData.profile_picture} profileLink={''} />
+        </Link>
       ))}
     </div>
   )
