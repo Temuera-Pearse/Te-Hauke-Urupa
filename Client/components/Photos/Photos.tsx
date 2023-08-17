@@ -1,4 +1,5 @@
-import Profile from '../../pages/Profile/Profile'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 interface PhotoProps {
   src: string
@@ -7,9 +8,9 @@ interface PhotoProps {
 
 function Photos({ src, profileLink }: PhotoProps) {
   return (
-    <a href={profileLink} className="block">
+    <Link to={profileLink} className="block">
       <img src={src} alt="Profile" className="w-full h-auto" />
-    </a>
+    </Link>
   )
 }
 

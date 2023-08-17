@@ -178,7 +178,7 @@ exports.seed = async function (knex) {
       headstoneLocationPic: '',
     },
     {
-      profile_picture: 'public/images/test-photos/maori-people9.jpg',
+      profile_picture: 'public/images/test-photos/maori-people9.jpeg',
       family_name: 'Brown',
       given_name: 'Ethan',
       address: '345 Oakwood Avenue, Havenhill',

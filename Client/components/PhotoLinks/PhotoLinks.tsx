@@ -27,16 +27,20 @@ function PhotoLinks(props: Props) {
   if (!Array.isArray(profiles)) {
     return <p>No profiles available.</p>
   }
+  console.log(profiles)
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
-      {profiles.map((profileData) => (
-        <Link key={profileData.id} to={`/main/${profileData.id}`}>
-          <div className="w-48 h-48">
-            {' '}
-            {/* Adjust the width and height as needed */}
-            <Photos src={profileData.profile_picture} profileLink={''} />
-          </div>
+      {props.data.map((profileData) => (
+        <Link
+          key={profileData.id}
+          to={`/main/${profileData.id}`}
+          className="block"
+        >
+          <Photos
+            src={profileData.profile_picture}
+            profileLink={`/main/${profileData.id}`}
+          />
         </Link>
       ))}
     </div>

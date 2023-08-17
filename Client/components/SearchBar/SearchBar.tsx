@@ -1,13 +1,19 @@
 import React, { useState } from 'react'
+import { proBackSchema } from '../../../models/profile'
 
-function SearchBar({ profiles, setFilteredProfiles }) {
+interface Props {
+  profiles: proBackSchema[]
+  setFilteredProfiles: React.Dispatch<React.SetStateAction<proBackSchema[]>>
+}
+
+function SearchBar({ profiles, setFilteredProfiles }: Props) {
   const [inputValue, setInputValue] = useState('')
 
   const handleSubmit = () => {
     const searchTerm = inputValue.trim().toLowerCase()
 
     if (searchTerm === '') {
-      setFilteredProfiles(profiles)
+      setFilteredProfiles(profiles) // Reset to original profiles when input is empty
     } else {
       const filteredProfiles = profiles.filter(
         (profile) =>

@@ -539,6 +539,10 @@ video {
   margin-bottom: 8rem;
 }
 
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
 .block {
   display: block;
 }
@@ -547,8 +551,8 @@ video {
   display: flex;
 }
 
-.h-32 {
-  height: 8rem;
+.h-48 {
+  height: 12rem;
 }
 
 .h-auto {
@@ -557,10 +561,6 @@ video {
 
 .min-h-screen {
   min-height: 100vh;
-}
-
-.w-32 {
-  width: 8rem;
 }
 
 .w-48 {
@@ -657,6 +657,10 @@ video {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .hover\:bg-blue-600:hover {
