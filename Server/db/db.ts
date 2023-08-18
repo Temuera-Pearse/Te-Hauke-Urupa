@@ -18,3 +18,7 @@ export async function getProfilesById(id: number, db = connection) {
     .select()
     .first()) as proBackSchema[]
 }
+
+export async function getKey(db = connection) {
+  return await db('key').select()
+}
