@@ -12,3 +12,5 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: 'incorrect password' })
   }
 })
+
+export default router

@@ -2,6 +2,7 @@ import express from 'express'
 import * as Path from 'node:path'
 
 import profileRoutes from './routes/profiles'
+import keyRoutes from './routes/key'
 
 const server = express()
 
