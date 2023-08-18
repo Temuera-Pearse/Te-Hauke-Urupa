@@ -13,9 +13,8 @@ interface ProfileData {
 
 function ProfileInfo() {
   const { id } = useParams() // Get the 'id' from the route parameters
-  const { data, isLoading, isError } = useQuery<ProfileData>(
-    'profile',
-    () => fetchedPerson
+  const { data, isLoading, isError } = useQuery('profile', () =>
+    fetchedPerson(Number(id))
   )
 
   if (isLoading) {

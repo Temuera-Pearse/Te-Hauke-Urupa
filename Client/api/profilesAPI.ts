@@ -18,3 +18,10 @@ export async function fetchedPerson(id: number): Promise<proBackSchema[]> {
 
   return res.body
 }
+
+export async function fetchKey() {
+  const url = '/api/v1/key'
+  const res = await request.get(url).set('Content-Type', 'application')
+
+  return res.body
+}

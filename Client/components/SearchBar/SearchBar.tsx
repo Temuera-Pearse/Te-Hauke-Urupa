@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { proBackSchema } from '../../../models/profile'
+import { fetchedProfiles } from '../../api/profilesAPI'
 
 interface Props {
   profiles: proBackSchema[]
@@ -13,7 +14,7 @@ function SearchBar({ profiles, setFilteredProfiles }: Props) {
     const searchTerm = inputValue.trim().toLowerCase()
 
     if (searchTerm === '') {
-      setFilteredProfiles(profiles) // Reset to original profiles when input is empty
+      setFilteredProfiles(profiles)
     } else {
       const filteredProfiles = profiles.filter(
         (profile) =>

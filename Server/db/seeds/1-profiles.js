@@ -4,7 +4,7 @@ exports.seed = async function (knex) {
     {
       profile_picture: 'public/images/test-photos/maori-people1.jpeg',
       family_name: 'Doe',
-      given_name: 'John Doe',
+      given_name: 'John',
       address: '-',
       gender: 'male',
       occupation: 'comedian',
