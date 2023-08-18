@@ -551,10 +551,6 @@ video {
   display: flex;
 }
 
-.h-48 {
-  height: 12rem;
-}
-
 .h-auto {
   height: auto;
 }

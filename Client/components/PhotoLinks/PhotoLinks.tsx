@@ -9,12 +9,8 @@ interface Props {
   data: proBackSchema[]
 }
 
-function PhotoLinks(props: Props) {
-  const {
-    data: profiles,
-    isLoading,
-    isError,
-  } = useQuery('profiles', fetchedProfiles)
+function PhotoLinks() {
+  const { data, isLoading, isError } = useQuery('profiles', fetchedProfiles)
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -24,24 +20,18 @@ function PhotoLinks(props: Props) {
     return <p>Error fetching profiles.</p>
   }
 
-  if (!Array.isArray(profiles)) {
+  if (!Array.isArray(data)) {
     return <p>No profiles available.</p>
   }
-  console.log(profiles)
+  console.log(data)
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
-      {props.data.map((profileData) => (
-        <Link
-          key={profileData.id}
-          to={`/main/${profileData.id}`}
-          className="block"
-        >
-          <Photos
-            src={profileData.profile_picture}
-            profileLink={`/main/${profileData.id}`}
-          />
-        </Link>
+      {data?.map((profileData) => (
+        <Photos
+          src={profileData.profile_picture}
+          profileLink={`/main/${profileData.id}`}
+        />
       ))}
     </div>
   )

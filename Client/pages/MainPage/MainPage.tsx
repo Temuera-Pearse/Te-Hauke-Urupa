@@ -12,7 +12,7 @@ function MainPage() {
         <SearchBar />
       </div>
       <div>
-        <PhotoLinks data={[]} />
+        <PhotoLinks />
       </div>
     </div>
   )
