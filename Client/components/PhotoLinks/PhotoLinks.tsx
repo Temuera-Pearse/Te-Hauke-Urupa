@@ -5,10 +5,6 @@ import { fetchedProfiles } from '../../api/profilesAPI'
 import { useQuery } from 'react-query'
 import { proBackSchema } from '../../../models/profile'
 
-interface Props {
-  data: proBackSchema[]
-}
-
 function PhotoLinks() {
   const { data, isLoading, isError } = useQuery('profiles', fetchedProfiles)
 

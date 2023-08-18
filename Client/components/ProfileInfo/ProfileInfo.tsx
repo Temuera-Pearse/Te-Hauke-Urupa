@@ -1,20 +1,22 @@
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
 import { fetchedPerson } from '../../api/profilesAPI'
-import { proBackSchema } from '../../../models/profile'
-import Photos from '../Photos/Photos'
+import ProfileImage from '../ProfilePhotos' // Import the ProfileImage component
 
-interface Props {
-  id: number
-  data: proBackSchema[]
+interface ProfileData {
+  profile_picture: string
+  family_name: string
+  given_name: string
+  gender: string
+  age: string
 }
 
-function ProfileInfo(props: Props) {
-  const {
-    data: profile,
-    isLoading,
-    isError,
-  } = useQuery('profile', async () => fetchedPerson(props.id))
+function ProfileInfo() {
+  const { id } = useParams() // Get the 'id' from the route parameters
+  const { data, isLoading, isError } = useQuery<ProfileData>(
+    'profile',
+    () => fetchedPerson
+  )
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -24,23 +26,24 @@ function ProfileInfo(props: Props) {
     return <p>Error fetching profile.</p>
   }
 
-  if (!profile) {
+  if (!data) {
     return <p>No profile available.</p>
   }
 
+  console.log(data)
+
   return (
     <div>
+      <ProfileImage
+        src={`${process.env.VITE_BASE_URL}/${data.profile_picture}`}
+      />
       <div>
-        <img
-          src={`${import.meta.env.BASE_URL}${profile.profile_picture}`}
-          alt="Profile Picture"
-        />
+        <p>
+          {data.given_name} {data.family_name}
+        </p>
+        <p>Age: {data.age}</p>
+        <p>Gender: {data.gender}</p>
       </div>
-      <h2>
-        {profile.given_name} {profile.family_name}
-      </h2>
-      <p>Age: {profile.age}</p>
-      <p>Gender: {profile.gender}</p>
     </div>
   )
 }
