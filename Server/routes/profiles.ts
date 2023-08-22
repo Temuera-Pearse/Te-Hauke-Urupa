@@ -18,12 +18,11 @@ router.get('/', async (req, res) => {
 router.get('/main', async (req, res) => {
   try {
     const searchTerm = String(req.query.searchTerm)
-    console.log('Received searchTerm:', searchTerm)
 
     if (searchTerm) {
       // Handle profile search based on the searchTerm
       const searchedProfile = await db.getProfileBySearch(searchTerm)
-
+      console.log('Received searchTerms:', searchTerm)
       res.json(searchedProfile)
     } else {
       // Handle fetching profile pictures

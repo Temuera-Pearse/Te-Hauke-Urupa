@@ -29,6 +29,7 @@ export async function fetchKey() {
 export async function fetchProfileByName(
   searchTerm: string
 ): Promise<proBackSchema[]> {
+  console.log(encodeURIComponent(searchTerm))
   const url = `${rootUrl}/main?searchTerm=${encodeURIComponent(searchTerm)}`
   const res = await request.get(url).set('Content-Type', 'application/json')
   console.log('im the api', searchTerm)

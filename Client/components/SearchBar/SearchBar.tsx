@@ -20,6 +20,7 @@ function SearchBar({ setFilteredProfiles }: Props) {
     try {
       const filteredProfiles = await fetchProfileByName(searchTerm)
       setFilteredProfiles(filteredProfiles)
+      console.log(filteredProfiles)
     } catch (error) {
       console.error('Error searching profiles:', error)
       setFilteredProfiles([]) // Clear the filtered profiles on error
