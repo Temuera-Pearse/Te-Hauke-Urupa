@@ -1,27 +1,28 @@
 import React, { useState } from 'react'
 import { proBackSchema } from '../../../models/profile'
-import { fetchedProfiles } from '../../api/profilesAPI'
+import { fetchedProfiles } from '../../api/profilesAPI' // Import the fetchProfiles function here
 
 interface Props {
-  profiles: proBackSchema[]
   setFilteredProfiles: React.Dispatch<React.SetStateAction<proBackSchema[]>>
 }
 
-function SearchBar({ profiles, setFilteredProfiles }: Props) {
+function SearchBar({ setFilteredProfiles }: Props) {
   const [inputValue, setInputValue] = useState('')
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     const searchTerm = inputValue.trim().toLowerCase()
 
     if (searchTerm === '') {
-      setFilteredProfiles(profiles)
-    } else {
-      const filteredProfiles = profiles.filter(
-        (profile) =>
-          profile.given_name.toLowerCase().includes(searchTerm) ||
-          profile.family_name.toLowerCase().includes(searchTerm)
-      )
+      setFilteredProfiles([])
+      return
+    }
+
+    try {
+      const filteredProfiles = await fetchedProfiles(searchTerm)
       setFilteredProfiles(filteredProfiles)
+    } catch (error) {
+      console.error('Error searching profiles:', error)
+      setFilteredProfiles([]) // Clear the filtered profiles on error
     }
 
     setInputValue('')

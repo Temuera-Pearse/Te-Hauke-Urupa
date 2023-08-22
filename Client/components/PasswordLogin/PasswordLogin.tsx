@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { fetchKey } from '../../api/profilesAPI'
 
 function PasswordLogin() {
   const [inputValue, setInputValue] = useState('')

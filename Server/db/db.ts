@@ -22,3 +22,9 @@ export async function getProfilesById(id: number, db = connection) {
 export async function getKey(db = connection) {
   return await db('key').select()
 }
+
+export async function getProfileBySearch(db = connection) {
+  return (await db('profiles')
+    .where('profiles.given_name', 'profiles.family_name')
+    .select()) as proBackSchema[]
+}
