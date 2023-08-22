@@ -23,8 +23,12 @@ export async function getKey(db = connection) {
   return await db('key').select()
 }
 
-export async function getProfileBySearch(db = connection) {
+export async function getProfileBySearch(searchTerm: string, db = connection) {
   return (await db('profiles')
-    .where('profiles.given_name', 'profiles.family_name')
+    .where((builder) =>
+      builder
+        .where('given_name', 'like', `%${searchTerm}%`)
+        .orWhere('family_name', 'like', `%${searchTerm}%`)
+    )
     .select()) as proBackSchema[]
 }

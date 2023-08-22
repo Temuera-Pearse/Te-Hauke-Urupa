@@ -17,18 +17,19 @@ router.get('/', async (req, res) => {
 
 router.get('/main', async (req, res) => {
   try {
-    const profilePics = await db.getProfilePics()
-    res.json(profilePics)
-  } catch (error) {
-    console.log(error)
-    res.status(500).json({ message: 'Something went wrong' })
-  }
-})
+    const searchTerm = String(req.query.searchTerm)
+    console.log('Received searchTerm:', searchTerm)
 
-router.get('/main', async (req, res) => {
-  try {
-    const searchedProfile = await db.getProfileBySearch()
-    res.json(searchedProfile)
+    if (searchTerm) {
+      // Handle profile search based on the searchTerm
+      const searchedProfile = await db.getProfileBySearch(searchTerm)
+
+      res.json(searchedProfile)
+    } else {
+      // Handle fetching profile pictures
+      const profilePics = await db.getProfilePics()
+      res.json(profilePics)
+    }
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong' })

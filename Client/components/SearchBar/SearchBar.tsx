@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { proBackSchema } from '../../../models/profile'
-import { fetchedProfiles } from '../../api/profilesAPI' // Import the fetchProfiles function here
+import { fetchProfileByName } from '../../api/profilesAPI' // Import the fetchProfiles function here
 
 interface Props {
   setFilteredProfiles: React.Dispatch<React.SetStateAction<proBackSchema[]>>
@@ -18,7 +18,7 @@ function SearchBar({ setFilteredProfiles }: Props) {
     }
 
     try {
-      const filteredProfiles = await fetchedProfiles(searchTerm)
+      const filteredProfiles = await fetchProfileByName(searchTerm)
       setFilteredProfiles(filteredProfiles)
     } catch (error) {
       console.error('Error searching profiles:', error)

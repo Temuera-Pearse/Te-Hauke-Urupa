@@ -7,7 +7,7 @@ const rootUrl = '/api/v1/profiles'
 export async function fetchedProfiles(): Promise<proBackSchema[]> {
   const url = `${rootUrl}`
 
-  const res = await request.get(url).set('Content-Type', 'application/json')
+  const res = await request.get(url).set('Content-Type', 'application n/json')
 
   return res.body
 }
@@ -26,10 +26,11 @@ export async function fetchKey() {
   return res.body
 }
 
-export async function fetchProfileByName(): Promise<proBackSchema[]> {
-  const url = `${rootUrl}`
-
+export async function fetchProfileByName(
+  searchTerm: string
+): Promise<proBackSchema[]> {
+  const url = `${rootUrl}/main?searchTerm=${encodeURIComponent(searchTerm)}`
   const res = await request.get(url).set('Content-Type', 'application/json')
-
+  console.log('im the api', searchTerm)
   return res.body
 }

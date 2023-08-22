@@ -19,7 +19,6 @@ function PhotoLinks() {
   if (!Array.isArray(data)) {
     return <p>No profiles available.</p>
   }
-  console.log(data)
 
   return (
     <div className="flex flex-wrap justify-center gap-4">
