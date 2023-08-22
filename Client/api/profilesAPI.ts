@@ -25,3 +25,11 @@ export async function fetchKey() {
 
   return res.body
 }
+
+export async function fetchProfileByName(): Promise<proBackSchema[]> {
+  const url = `${rootUrl}`
+
+  const res = await request.get(url).set('Content-Type', 'application/json')
+
+  return res.body
+}

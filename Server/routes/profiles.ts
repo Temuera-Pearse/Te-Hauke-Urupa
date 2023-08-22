@@ -25,6 +25,16 @@ router.get('/main', async (req, res) => {
   }
 })
 
+router.get('/main', async (req, res) => {
+  try {
+    const searchedProfile = await db.getProfileBySearch()
+    res.json(searchedProfile)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ message: 'Something went wrong' })
+  }
+})
+
 router.get('/:id', async (req, res) => {
   try {
     const id = Number(req.params.id)
