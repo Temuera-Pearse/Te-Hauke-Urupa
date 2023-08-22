@@ -1,6 +1,6 @@
 const { join } = require('node:path')
 
-module. n  = {
+module.exports = {
   development: {
     client: 'sqlite3',
     useNullAsDefault: true,
