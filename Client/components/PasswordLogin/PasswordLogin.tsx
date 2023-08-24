@@ -4,7 +4,7 @@ function PasswordLogin() {
   const [inputValue, setInputValue] = useState('')
 
   const handleSubmit = () => {
-    const correctPassword = process.env.REACT_APP_PASSWORD
+    const correctPassword = window.reactAppPassword
 
     console.log('Entered Password:', inputValue)
     console.log('Stored Password:', correctPassword)
