@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
-import { fetchKey } from '../../api/profilesAPI'
+import { useState } from 'react'
 
 function PasswordLogin() {
   const [inputValue, setInputValue] = useState('')
 
   const handleSubmit = () => {
-    alert(`You typed: ${inputValue}`)
-    setInputValue('')
+    const correctPassword = process.env.REACT_APP_PASSWORD
+
+    console.log('Entered Password:', inputValue)
+    console.log('Stored Password:', correctPassword)
+
+    if (inputValue === correctPassword) {
+      alert('Login successful!')
+      setInputValue('')
+    } else {
+      alert('Incorrect password. Please try again.')
+      setInputValue('')
+    }
   }
 
   return (
