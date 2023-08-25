@@ -1,23 +1,16 @@
 import React, { useState } from 'react'
+import { fetchVerification } from '../../api/passwordVerify'
 
 function PasswordLogin() {
   const [inputValue, setInputValue] = useState('')
 
   const handleSubmit = async () => {
-    const response = await fetch('/api/v1/check-password', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ password: inputValue }),
-    })
+    const isCorrect = await fetchVerification(inputValue)
 
-    const data = await response.json()
-
-    if (data.correct) {
-      // Password is correct, take appropriate action
+    if (isCorrect) {
+      console.log('correct')
     } else {
-      // Password is incorrect, show error message
+      console.log('not correct')
     }
 
     setInputValue('')
