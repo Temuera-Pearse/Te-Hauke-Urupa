@@ -4,6 +4,7 @@ import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 import { useQuery } from 'react-query'
 import { fetchedPerson } from '../../api/profilesAPI'
 import Photos from '../../components/Photos/Photos'
+import Header from '../../components/Header/Header'
 
 function Profile() {
   const defaultProfileData: proBackSchema = {
@@ -48,7 +49,7 @@ function Profile() {
 
   return (
     <div>
-      <h1> im the profile </h1>
+      <Header />
 
       {profileData ? (
         <ProfileInfo id={Number(id)} data={[selectedProfile]} />
