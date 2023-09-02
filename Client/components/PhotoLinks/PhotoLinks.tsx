@@ -24,6 +24,7 @@ function PhotoLinks() {
     <div className="flex flex-wrap justify-center gap-4">
       {data?.map((profileData) => (
         <Photos
+          key={profileData.id}
           src={profileData.profile_picture}
           profileLink={`/main/${profileData.id}`}
         />
