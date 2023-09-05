@@ -57,4 +57,13 @@ describe('GET /api/v1/profiles', () => {
     expect(response.status).toBe(200)
     expect(response.body).toEqual(fakeProfile)
   })
+
+  it('should get profile pics only', async () => {
+    vi.mocked(db.getProfilePics).mockResolvedValue(fakeProfile)
+    const response = await request(server).get('/api/v1/profiles')
+    expect(response.status).toBe(200)
+    for (const fakeProfile of response.body) {
+      expect(fakeProfile).toHaveProperty('profile_picture')
+    }
+  })
 })
