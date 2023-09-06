@@ -1,6 +1,7 @@
 import React from 'react'
 import PasswordLogin from '../../components/PasswordLogin/PasswordLogin'
 import profiles from '../../../Server/routes/profiles'
+import LoginButton from '../../components/Buttons/LoginButton/LoginButton'
 
 function LandingPage() {
   const backgroundImage = 'public/images/background/kahuranaki-marae.webp'
@@ -14,6 +15,7 @@ function LandingPage() {
     >
       <div>
         <PasswordLogin />
+        <LoginButton />
       </div>
     </div>
   )
