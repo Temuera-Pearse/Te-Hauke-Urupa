@@ -12,6 +12,7 @@ import App from './components/App/App'
 import MainPage from './pages/MainPage/MainPage'
 import LandingPage from './pages/LandingPage/LandingPage'
 import Profile from './pages/Profile/Profile'
+import Redirect from './pages/Redirect/Redirect'
 
 export const routes = createRoutesFromElements(
   <Route>
