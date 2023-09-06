@@ -21,6 +21,8 @@
     "knex": "knex --knexfile ./server/db/knexfile.js"
   },
   "dependencies": {
+    "@auth0/auth0-react": "^2.2.1",
+    "auth0": "^3.7.0",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "concurrently": "^8.2.0",

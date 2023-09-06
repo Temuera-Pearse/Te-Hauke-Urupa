@@ -1,7 +1,6 @@
 import { vi, describe, it, expect } from 'vitest'
 import request from 'supertest'
 import server from '../server'
-import { getProfiles } from '../db/db'
 import * as db from '../db/db'
 import { proBackSchema } from '../../models/profile'
 import { response } from 'express'
